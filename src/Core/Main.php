@@ -23,6 +23,7 @@ use pocketmine\entity\Entity;
 use pocketmine\event\entity\ExplosionPrimeEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\entity\Effect;
+use pocketmine\entity\EffectInstance;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
