@@ -30,7 +30,6 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
 use pocketmine\event\player\PlayerDropItemEvent;
 use pocketmine\event\player\PlayerItemConsumeEvent;
-use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\level\sound\AnvilUseSound;
 use pocketmine\level\sound\EndermanTeleportSound;
 use pocketmine\utils\Textformat as Color;
@@ -70,7 +69,6 @@ class Main extends PluginBase implements Listener {
                 $config->set("Hub/Lobby", " §c Willkommen in der Lobby");
                 $config->set("JoinTitle", " §7[§a»§7] §aWllkommen");
                 $config->set("Prefix", "§7[§9DushyMC.de§r§7]");
-				$config->set("Chat", " §7Du musst den Rang §6Premium§7 besitzen um schreiben zu können!");
         }
         $config->save();
 
@@ -205,20 +203,6 @@ class Main extends PluginBase implements Listener {
 
     }
 	
-	public function onChat(PlayerChatEvent $ev){
-        
-        $p = $ev->getPlayer();
-		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-        		
-	    if($p->hasPermission("lobby.chat")){
-		$ev->setCancelled(false);    
-	    }else{
-	    	$p->sendMessage($this->prefix . $config->get("Chat"));
-	    	$ev->setCancelled(true);
-	    }
-		
-	}
-
     public function onInteract(PlayerInteractEvent $ev){
 
         $player = $ev->getPlayer();
