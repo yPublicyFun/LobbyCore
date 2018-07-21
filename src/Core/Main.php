@@ -366,7 +366,7 @@ class Main extends PluginBase implements Listener {
             $player->transfer("54.37.166.24","19133");
             }else{
            $player->sendMessage($this-> prefix . Color::RED . " §7Du benötigst einen Rang!");
-           }
+            }
            $player->sendMessage($this-> prefix . Color::RED . " §7Betrete unseren Discord für mehr Infos!");
             
             }elseif($item->getCustomName() == "§1Sprache"){
