@@ -76,9 +76,9 @@ class Main extends PluginBase implements Listener {
         $info = new Config($this->getDataFolder() . "info.yml", Config::YAML);
         if(empty($info->get("infoline1"))){
             $info->set("infoline1", "§7===§7[§f§lDushyMC.de§r§7]===");
-            $info->set("infoline2", "§7» §9bei Weiteren Fragen melde dich im Discord!");
+            $info->set("infoline2", "§7» §9Bei Weiteren Fragen melde dich im Discord!");
             $info->set("infoline3", "§7» §9https://discord.gg/zMyF9FV");
-            $info->set("infoline4", "§7» §9Unsere Webseite findet ihr unter DushyMC.de!");
+            $info->set("infoline4", "§7» §9Unsere Webseite findest du unter DushyMC.de!");
             $info->set("infoline5", "§7=================");
             $info->set("Popup", "» §6Vielen Spaß");
         }
@@ -192,6 +192,19 @@ class Main extends PluginBase implements Listener {
                 $sender->teleport($this->getServer()->getDefaultLevel()->getSafeSpawn());
                 $sender->addTitle($LobbyTitle->get("LobbySendigBackTitle"));
                 return true;
+                
+                case "fly";
+                
+                $sender->setAllowFlight(true);
+                $sender->sendMessage($this->prefix . Color::WHITE . " §7Du hast den §fFlugModus§r §7aktiviert.");
+                $sender->sendPopup("§fFlugModus§7: §aAktiviert");
+                }else{
+                $sender->setAllowFlight(false);
+                $sender->setFood(20);
+                $sender->setHealth(20);
+                $sender->sendMessage($this->prefix . Color::WHITE . " §7Du hast den §fFlugModus§r §7Deaktiviert.");
+                $sender->sendPopup("§fFlugModus§7: §cDeaktiviert");
+            }
         }
     }
 
@@ -266,12 +279,12 @@ class Main extends PluginBase implements Listener {
 
             $player->getInventory()->clearAll();
             $player->getInventory()->setSize(9);
-            $player->getInventory()->setItem(0, Item::get(260)->setCustomName("§aJumpboost"));
+            $player->getInventory()->setItem(0, Item::get(264)->setCustomName("§aJumpboost"));
             $player->getInventory()->setItem(1, Item::get(160)->setCustomName(""));
-            $player->getInventory()->setItem(2, Item::get(264)->setCustomName("§3Speedboost"));
+            $player->getInventory()->setItem(2, Item::get(388)->setCustomName("§3Speedboost"));
             $player->getInventory()->setItem(3, Item::get(160)->setCustomName(""));
-            $player->getInventory()->setItem(4, Item::get(264)->setCustomName("§fUnsichtbar"));
-			$player->getInventory()->setItem(6, Item::get(32)->setCustomName("§cAusschalten"));
+            $player->getInventory()->setItem(4, Item::get(265)->setCustomName("§fUnsichtbar"));
+			$player->getInventory()->setItem(6, Item::get(32)->setCustomName("§causschalten"));
             $player->getInventory()->setItem(8, Item::get(351, 1)->setCustomName("§cZurück"));
 
         }elseif($item->getCustomName() == "§eSkyWars"){
@@ -471,19 +484,19 @@ class Main extends PluginBase implements Listener {
             $player->getInventory()->setItem(1, Item::get(369)->setCustomName("§eSpieler verstecken"));
 			$player->sendMessage($this->prefix . " §7Du hast die §7EisenSchuhe§r §7angezogen");
 			
-		}elseif($item->getCustomName() == "§c§lausschalten"){
+		}elseif($item->getCustomName() == "§causschalten"){
 			
 			$player->removeAllEffects();
 			$player->sendMessage($this->prefix . " §7Du hast alle Effekte §cDeaktiviert§r");
 			
-		}elseif($item->getCustomName() == "§4§lausschalten"){
+		}elseif($item->getCustomName() == "§4ausschalten"){
 			
 			$player->getInventory()->clearAll();
 			$player->getArmorInventory()->clearAll();
 			$player->sendMessage($this->prefix . " §7Du hast alle Boots §cDeaktiviert§r");
 			$player->getInventory()->setSize(9);
             $player->getInventory()->setItem(0, Item::get(309)->setCustomName("§7EisenSchuhe"));
-			$player->getInventory()->setItem(6, Item::get(32)->setCustomName("§4§lausschalten"));
+			$player->getInventory()->setItem(6, Item::get(32)->setCustomName("§4ausschalten"));
             $player->getInventory()->setItem(8, Item::get(351, 1)->setCustomName("§cZurück"));
 			
 		}elseif($item->getCustomName() == "§cZurück"){
