@@ -118,7 +118,7 @@ class Main extends PluginBase implements Listener {
         $player->getInventory()->setSize(9);
         $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
         $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-        $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+        $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
         if($player->hasPermission("lobby.yt")){
             $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
         }else{
@@ -239,9 +239,11 @@ class Main extends PluginBase implements Listener {
             $player->getInventory()->setItem(0, Item::get(160)->setCustomName(""));
             $player->getInventory()->setItem(1, Item::get(2)->setCustomName("§eSkyWars"));
             $player->getInventory()->setItem(2, Item::get(160)->setCustomName(""));
-            $player->getInventory()->setItem(3, Item::get(283)->setCustomName("§bCityBuild"));
+            $player->getInventory()->setItem(3, Item::get(138)->setCustomName("§bCityBuild"));
             $player->getInventory()->setItem(4, Item::get(160)->setCustomName(""));
             $player->getInventory()->setItem(5, Item::get(399)->setCustomName("§5Lobby"));
+            $player->getInventory()->setItem(6, Item::get(160)->setCustomName(""));
+            $player->getInventory()->setItem(7, Item::get(152)->setCustomName("§4Soon..."));
             $player->getInventory()->setItem(8, Item::get(351, 1)->setCustomName("§cZurück"));
 
         }elseif($item->getCustomName() == "§aCosmetics"){
@@ -282,7 +284,7 @@ class Main extends PluginBase implements Listener {
             $player->getInventory()->setSize(9);
             $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
                 $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
@@ -300,7 +302,7 @@ class Main extends PluginBase implements Listener {
             $player->getInventory()->setSize(9);
             $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
                 $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
@@ -313,7 +315,7 @@ class Main extends PluginBase implements Listener {
             $player->getInventory()->clearAll();
 			$player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
                 $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
@@ -332,7 +334,7 @@ class Main extends PluginBase implements Listener {
 			$player->getInventory()->setSize(9);
             $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
             $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
@@ -351,7 +353,7 @@ class Main extends PluginBase implements Listener {
 			$player->getInventory()->setSize(9);
             $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
             $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
@@ -370,7 +372,7 @@ class Main extends PluginBase implements Listener {
 			$player->getInventory()->setSize(9);
             $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("e4Teleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
             $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
@@ -437,7 +439,7 @@ class Main extends PluginBase implements Listener {
             $player->getInventory()->setSize(9);
             $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
                 $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
@@ -460,7 +462,7 @@ class Main extends PluginBase implements Listener {
 			$player->getInventory()->setSize(9);
             $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
             $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
+            $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
             $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
