@@ -362,6 +362,7 @@ class Main extends PluginBase implements Listener {
             }elseif($item->getCustomName() == "§6VIP Lobby"){
 
             $player->sendMessage("");
+            if($player->hasPermission("lobby.vip")){
             $player->sendMessage($this-> prefix . Color::RED . " §7Du wirst nun zur §6VIP Lobby §7teleportiert");
             $player->transfer("54.37.166.24","19133");
             }else{
