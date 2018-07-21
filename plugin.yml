@@ -1,0 +1,15 @@
+name: LobbyCore
+version: 1.0
+main: Core\Main
+api: [4.0.0]
+author: yPublicyFun
+permissions:
+  lobby.yt:
+    default: op
+commands:
+  hub:
+     description: hub
+     usage: /hub
+  lobby:
+     description: lobby
+     usage: /lobby
