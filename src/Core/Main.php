@@ -323,10 +323,8 @@ class Main extends PluginBase implements Listener {
         }elseif($item->getCustomName() == "§aJumpboost") {
 
             $player->removeAllEffects();
-            $effect = Effect::getEffect(Effect::JUMP);
-            $effect->setAmplifier(3);
-            $effect->setDuration(500);
-            $player->addEffect($effect);
+            $eff = new EffectInstance(Effect::getEffect(Effect::JUMP) , 500 * 20 , 1 , false);
+            $player->addEffect($eff); 
             $player->sendMessage($this->prefix . Color::WHITE . " §7Du hast den Effekt §aJumpBoost§r §7ausgewählt");
             $player->sendPopup("§8§l»§r §aJumpBoost§7: §cAktiviert");
 			$player->getInventory()->clearAll();
@@ -344,10 +342,8 @@ class Main extends PluginBase implements Listener {
         }elseif($item->getCustomName() == "§3Speedboost") {
 
             $player->removeAllEffects();
-            $effect = Effect::getEffect(Effect::SPEED);
-            $effect->setAmplifier(3);
-            $effect->setDuration(500);
-            $player->addEffect($effect);
+            $eff = new EffectInstance(Effect::getEffect(Effect::SPEED) , 500 * 20 , 1 , false);
+            $player->addEffect($eff);
             $player->sendMessage($this->prefix . Color::WHITE . " §7Du hast den Effekt §3SpeedBoost§r §7ausgewählt");
             $player->sendPopup("§8§l»§r §3Speedboost§7: §cAktiviert");
 			$player->getInventory()->clearAll();
@@ -365,10 +361,8 @@ class Main extends PluginBase implements Listener {
         }elseif($item->getCustomName() == "§fUnsichtbar"){
 
             $player->removeAllEffects();
-            $effect = Effect::getEffect(Effect::INVISIBILITY);
-            $effect->setAmplifier(3);
-            $effect->setDuration(500);
-            $player->addEffect($effect);
+            $eff = new EffectInstance(Effect::getEffect(Effect::INVISIBILITY) , 500 * 20 , 1 , false);
+            $player->addEffect($eff);
             $player->sendMessage($this->prefix . Color::WHITE . " §7Du hast den Effekt §fUnsichtbar§r §7ausgewählt");
             $player->sendPopup("§8§l»§r §fUnsichtbar§7: §cAktiviert");
 			$player->getInventory()->clearAll();
@@ -388,9 +382,9 @@ class Main extends PluginBase implements Listener {
 
             $player->getInventory()->clearAll();
             $player->getInventory()->setSize(9);
-            $player->getInventory()->setItem(0, Item::get(341)->setCustomName("§aAktivieren"));
-            $player->getInventory()->setItem(4, Item::get(376)->setCustomName("§4Deaktivieren"));
-            $player->getInventory()->setItem(8, Item::get(351, 1)->setCustomName("§cZurück"));
+            $player->getInventory()->setItem(0, Item::get(351, 10)->setCustomName("§aAktivieren"));
+            $player->getInventory()->setItem(8, Item::get(351, 8)->setCustomName("§4Deaktivieren"));
+            $player->getInventory()->setItem(4, Item::get(351, 1)->setCustomName("§cZurück"));
 
         }elseif($item->getCustomName() == "§aAktivieren"){
 
@@ -440,15 +434,15 @@ class Main extends PluginBase implements Listener {
             $player->addTitle("§7» §6Lobby", "");
             $player->getInventory()->clearAll();
             $player->getInventory()->setSize(9);
-            $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§7× §aInfo §7×"));
-            $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§7× §4Teleporter §7×"));
-            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§7× §3Extras §7×"));
+            $player->getInventory()->setItem(4, Item::get(339)->setCustomName("§aInfos"));
+            $player->getInventory()->setItem(0, Item::get(345)->setCustomName("§eTeleporter"));
+            $player->getInventory()->setItem(8, Item::get(54)->setCustomName("§aCosmetics"));
             if($player->hasPermission("lobby.yt")){
-                $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§7× §fFly §7×"));
+                $player->getInventory()->setItem(7, Item::get(288)->setCustomName("§fFly"));
             }else{
-                $player->getInventory()->setItem(7, Item::get(152)->setCustomName("§7× §fFly §7[§6Premium§7] §7×"));
+                $player->getInventory()->setItem(7, Item::get(152)->setCustomName("§fFly §7[§6Premium§7] §7×"));
             }
-            $player->getInventory()->setItem(1, Item::get(369)->setCustomName("§7× §eSpieler verstecken §8[§aSICHBAR§8] §7×"));
+            $player->getInventory()->setItem(1, Item::get(369)->setCustomName("§eSpieler verstecken"));
 
         }elseif($item->getCustomName() == "§6Effekte §7[§6Premium§7]"){
 
