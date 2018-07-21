@@ -37,14 +37,14 @@ use pocketmine\utils\Textformat as Color;
 
 class Main extends PluginBase implements Listener {
 
-    public $prefix = "";
+    public $prefix = "§7[§9DushyMC.de§r§7]";
     public $hideall = [];
 
     public function onEnable () {
 		
 		$prefix = new Config($this->getDataFolder() . "prefix.yml", Config::YAML);
             if(empty($prefix->get("Prefix"))) {
-                $prefix->set("Prefix", "§7[§bRetronixMC§r§7]");
+                $prefix->set("Prefix", "§7[§9DushyMC.de§r§7]");
 			}
 			$prefix->save();
 
@@ -53,30 +53,30 @@ class Main extends PluginBase implements Listener {
         $this->prefix = $prefix->get("Prefix");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getServer()->getLogger()->info("§4--------------------------------");
-        $this->getServer()->getLogger()->info("§7[§e§lLOBBY§r§7] §awurde Aktiviert");
-        $this->getServer()->getLogger()->info("      §5§lPlugin by RushToEasy");
+        $this->getServer()->getLogger()->info("§7[§eLobbyCore§r§7] §awurde Aktiviert");
+        $this->getServer()->getLogger()->info("§5Plugin by Phantom");
         $this->getServer()->getLogger()->info("§4--------------------------------");
 		
 		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
             if(empty($config->get("JoinBroadcast"))) {
                 $config->set("JoinBroadcast1", "§7=======================");
                 $config->set("LEER", "");
-                $config->set("JoinBroadcast2", " §8» §6Willkommen auf dem RetronixMC Netzwerk");
-                $config->set("JoinBroadcast3", " §8» §fWebseite§7 × §9RetronixMC.tk");
-                $config->set("JoinBroadcast4", " §8» §fDiscord§7 × §9https://discord.gg/yGkqfBz ");
+                $config->set("JoinBroadcast2", " §8» §6Willkommen auf dem DushyMC Netzwerk");
+                $config->set("JoinBroadcast3", " §8» §fWebseite§7 × §DushyMC.tk");
+                $config->set("JoinBroadcast4", " §8» §fDiscord§7 × §9https://discord.gg/zMyF9FV");
                 $config->set("LEER2", "");
                 $config->set("JoinBroadcast5", "§7=======================");
                 $config->set("BlockBreakMessage", " §cDu darfst hier nicht abbauen!");
                 $config->set("Hub/Lobby", " §c Willkommen in der Lobby");
                 $config->set("JoinTitle", " §7[§a»§7] §aWllkommen");
-                $config->set("Prefix", "§7[§bRetronixMC§r§7]");
+                $config->set("Prefix", "§7[§9DushyMC.de§r§7]");
 				$config->set("Chat", " §7Du musst den Rang §6Premium§7 besitzen um schreiben zu können!");
         }
         $config->save();
 
         $info = new Config($this->getDataFolder() . "info.yml", Config::YAML);
         if(empty($info->get("infoline1"))){
-            $info->set("infoline1", "§7===§7[§bRetronixMC§r§7]===");
+            $info->set("infoline1", "§7===§7[§9DushyMC.de§r§7]===");
             $info->set("infoline2", "§7» §9Bei Weiteren Fragen melde dich im Discord");
             $info->set("infoline3", "§7» §9https://discord.gg/yGkqfBz");
             $info->set("infoline4", "§7» §9Dazu wird ein Supporter dir dann die Fragen beantworten.");
@@ -98,8 +98,9 @@ class Main extends PluginBase implements Listener {
 		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 
         $player = $ev->getPlayer();
+        $name = $player->getName();
         $player->getInventory()->clearAll();
-        $ev->setJoinMessage("");
+        $ev->setJoinMessage("§7[§9+§7]" . Color::DARK_GRAY . $name);
         $player->setFood(20);
         $player->setHealth(20);
         $player->setGamemode(0);
@@ -363,6 +364,10 @@ class Main extends PluginBase implements Listener {
             $player->sendMessage("");
             $player->sendMessage($this-> prefix . Color::RED . " §7Du wirst nun zur §6VIP Lobby §7teleportiert");
             $player->transfer("54.37.166.24","19133");
+            }else{
+           $player->sendMessage($this-> prefix . Color::RED . " §7Du benötigst einen Rang!");
+           }
+           $player->sendMessage($this-> prefix . Color::RED . " §7Betrete unseren Discord für mehr Infos!");
             
             }elseif($item->getCustomName() == "§1Sprache"){
 
