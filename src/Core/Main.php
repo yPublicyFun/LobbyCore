@@ -368,6 +368,21 @@ class Main extends PluginBase implements Listener {
            $player->sendMessage($this-> prefix . Color::RED . " §7Du benötigst einen Rang!");
             }
            $player->sendMessage($this-> prefix . Color::RED . " §7Betrete unseren Discord für mehr Infos!");
+           
+           }elseif($item->getCustomName() == "§bLobby-1"){
+
+            $player->sendMessage("");
+            $player->sendMessage($this-> prefix . Color::RED . " §7Du bist bereits §bLobby-1§7!");
+            
+            }elseif($item->getCustomName() == "§bLobby-2"){
+
+            $player->sendMessage("");
+            $player->transfer("54.37.166.24","19134");
+            
+            }elseif($item->getCustomName() == "§bLobby-3"){
+
+            $player->sendMessage("");
+            $player->transfer("54.37.166.24","19135");
             
             }elseif($item->getCustomName() == "§1Sprache"){
 
